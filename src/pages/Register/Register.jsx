@@ -9,20 +9,17 @@ const Register = () => {
 
     const handleRegister = e => {
         e.preventDefault();
-
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
 
         // password validation
         const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-
         // Correct method is `test`, not `text`
         if (!passwordValidation.test(password)) {
             alert("Password must be at least 6 characters long and include at least one uppercase and one lowercase letter.");
             return; // Stop further form processing if invalid
         }
-
         console.log(email, password);
 
         createUser(email, password)
@@ -64,9 +61,6 @@ const Register = () => {
                                 name="password"
                                 placeholder="password"
                                 className="input input-bordered" required />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
