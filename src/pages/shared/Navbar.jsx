@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../../context/AuthContext/AuthContext";
 import logo from '../../assets/job-application-logo.png'
 
@@ -17,7 +17,7 @@ const Navbar = () => {
     }
 
     const links = <>
-        <Link to=""><a>Home</a></Link>
+        <li><NavLink to="/">Home</NavLink></li>
     </>
 
     return (
@@ -60,7 +60,7 @@ const Navbar = () => {
                         user ? <>
                             <button onClick={handleSignOut} className="btn">Sign Out</button>
                         </> : <>
-                            <Link to="/register">Register</Link>
+                            <Link to="/register" className="btn">Register</Link>
                             <Link to="/signIn" className="btn">Sign In</Link>
                         </>
                     }
