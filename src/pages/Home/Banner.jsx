@@ -20,8 +20,8 @@ const Banner = () => {
                 </div>
                 <div className="flex-1">
                     <motion.h1
-                        animate={{ x: 50 }}
-                        transition={{ duration: 2, delay: 1, ease: easeOut, repeat: Infinity }}
+                        animate={{ x: [0, 50, 0] }}
+                        transition={{ duration: 5, delay: 1, ease: easeOut, repeat: Infinity }}
                         className="text-5xl font-bold">Latest <motion.span animate={{ color: ['#fff033', '#33ffd0', '#ff3333'] }}
                             transition={{ duration: 1.5, repeat: Infinity }}
                         >Jobs</motion.span> For You!</motion.h1>
