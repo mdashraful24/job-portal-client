@@ -11,6 +11,7 @@ const SignIn = () => {
     const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
     const location = useLocation()
+    // const from = location.state || "/";
 
     const handleSignIn = e => {
         e.preventDefault();
@@ -22,6 +23,7 @@ const SignIn = () => {
         signInUser(email, password)
             .then(result => {
                 console.log('sign in', result.user)
+                // navigate(from)
                 navigate(location?.state ? location.state : "/")
             })
             .catch(error => {
