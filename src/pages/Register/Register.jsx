@@ -25,15 +25,15 @@ const Register = () => {
             alert("Password must be at least 6 characters long and include at least one uppercase and one lowercase letter.");
             return; // Stop further form processing if invalid
         }
-        console.log(email, password);
+        // console.log(email, password);
 
         createUser(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 navigate(location?.state ? location.state : "/")
             })
             .catch(error => {
-                console.log(error.message);
+                // console.log(error.message);
             })
     }
 

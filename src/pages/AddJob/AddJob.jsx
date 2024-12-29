@@ -17,7 +17,7 @@ const AddJob = () => {
         newJob.salaryRange = { min, max, currency }
         newJob.requirements = newJob.requirements.split('\n');
         newJob.responsibilities = newJob.responsibilities.split('\n');
-        console.log(newJob);
+        // console.log(newJob);
 
         // client send data from backend
         fetch('http://localhost:5000/jobs', {

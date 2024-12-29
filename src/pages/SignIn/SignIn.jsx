@@ -5,6 +5,7 @@ import AuthContext from "../../context/AuthContext/AuthContext";
 import SocialLogin from "../shared/SocialLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import axios from "axios";
 
 const SignIn = () => {
     const { signInUser } = useContext(AuthContext);
@@ -18,16 +19,19 @@ const SignIn = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         signInUser(email, password)
             .then(result => {
-                console.log('sign in', result.user)
+                console.log('sign in', result.user.email);
+                const user = { email: result.user.email };
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => console.log(res.data))
                 // navigate(from)
                 navigate(location?.state ? location.state : "/")
             })
             .catch(error => {
-                console.log(error.message)
+                // console.log(error.message)
             })
     }
 

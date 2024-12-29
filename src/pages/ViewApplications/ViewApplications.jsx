@@ -5,7 +5,7 @@ const ViewApplications = () => {
     const applications = useLoaderData();
 
     const handleStatusUpdate = (e, id) => {
-        console.log(e.target.value, id)
+        // console.log(e.target.value, id)
         const data = {
             status: e.target.value
         }

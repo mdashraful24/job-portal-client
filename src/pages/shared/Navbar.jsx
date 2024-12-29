@@ -9,10 +9,10 @@ const Navbar = () => {
     const handleSignOut = () => {
         signOutUser()
             .then(result => {
-                console.log('successful sign out')
+                // console.log('successful sign out')
             })
             .catch(error => {
-                console.log("failed to sign out. Stay here. Don't leave me alone.")
+                // console.log("failed to sign out. Stay here. Don't leave me alone.")
             })
     }
 
