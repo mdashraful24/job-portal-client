@@ -8,7 +8,7 @@ const MyPostedJobs = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/jobs?email=${user.email}`)
+        fetch(`https://job-portal-server-one-pi.vercel.app/jobs?email=${user.email}`)
             .then(res => res.json())
             .then(data => setJobs(data))
     }, [user.email])
@@ -21,7 +21,7 @@ const MyPostedJobs = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>No.</th>
                             <th>Job Title</th>
                             <th>Company</th>
                             <th>Deadline</th>
